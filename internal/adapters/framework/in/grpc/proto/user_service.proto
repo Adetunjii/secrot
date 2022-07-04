@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package pb;
+
+import "user.proto";
+
+option go_package = "./pb";
+
+service UserService {
+  rpc Deposit(DepositRequestParameters) returns (User){}
+}

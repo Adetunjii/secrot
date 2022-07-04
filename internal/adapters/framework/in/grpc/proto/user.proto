@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package pb;
+
+
+option go_package = "./pb";
+
+message DepositRequestParameters {
+  int32 userId = 1;
+  int32 amount = 2;
+}
+
+message User {
+  int32 id = 1;
+  string firstName = 2;
+  string lastName = 3;
+  string email = 4;
+  int32 balance = 5;
+}
