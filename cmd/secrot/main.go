@@ -19,6 +19,10 @@ func main() {
 		log.Fatalf("error %v", err)
 	}
 
+	defer func() {
+		config.DB.CloseConnection()
+	}()
+
 	core := domain.New()
 
 	application := api.NewApplication(config.DB, core)
